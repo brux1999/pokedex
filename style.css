@@ -40,6 +40,10 @@ body {
 }
 
 #busquedapm {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
     padding: 30px;
     margin-top: 70px;
 }
