@@ -15,22 +15,23 @@ async function getAllPokemons() {
 }
 
 
-function showPokemon(pokemonArray) {
+async function showPokemon(pokemonArray) {
+    const promises = pokemonArray.map(async element => {
+        const imagePokemon = await getPokemon(element.name);
+        return `<div class="card-container"><section class="pokemon-card">${element.name}</p> <img class="pokemon-image"src="${imagePokemon}" alt=""></section>`;
+    });
 
-    let template = '';
+    const templateArray = await Promise.all(promises);
+    const template = templateArray.join('');
 
-    pokemonArray.forEach(element => {
-        const imagePokemon = getPokemon(element.name);
-        template += `<div><p>${element.name}</p> <img src=${imagePokemon} alt=""></div>`;
-    })
-
-    return sectionPokemons.innerHTML = template;
+    sectionPokemons.innerHTML = template;
 }
+
 
 async function getPokemon(name) {
     const URL = `https://pokeapi.co/api/v2/pokemon/${name}`
     const response = await fetch(URL);
     const data = await response.json();
-    const imagePokemon = data.sprites.back_default;
+    const imagePokemon = data.sprites.front_default;
     return imagePokemon;
 }
