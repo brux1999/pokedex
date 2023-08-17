@@ -14,31 +14,33 @@
 </head>
 
 <body>
-    <main>
-        <div>
-            <nav id="navbar">
-                <ul id="navcats">
-                    <li><a href="#pokedex">Pokedex</a></li>
-                    <li><a href="#">Detalles</a></li>
-                    <li><a href="#">Creditos</a></li>
-                </ul>
-            </nav>
-        </div>
-        <section>
-            <div id="busquedapm">
-                <label for="">Pokemon: <input type="text" name="pokemon" placeholder="Nombre o numero"></label>
-                <input type="button" name="buscar" class="btn btn-warning" id="buscar" value="Buscar">
-                <input type="button" name="random" class="btn btn-secondary" value="Pokemon Random">
-                <input type="button" name="pkm-siguiente" class="btn btn-success" value="Pokemon siguiente">
-                <input type="button" name="pkm-anterior" class="btn btn-danger" value="Pokemon anterior">
-                <input type="button" name="imagen" class="btn btn-dark" value="Rotar izq">
-                <input type="button" name="imagen" class="btn btn-dark" value="Rotar der">
-            </div>
-            <h1 id="pokedex-title">Pokedex</h1>
-            <section id="pokemon-list">
+    <nav id="navbar">
+        <ul id="navcats">
+            <li><a href="#pokedex">Pokedex</a></li>
+            <li><a href="#">Detalles</a></li>
+            <li><a href="#">Creditos</a></li>
+        </ul>
+    </nav>
 
-            </section>
-        </section>
+    <section>
+        <div id="busquedapm">
+            <label for="">Pokemon: <input type="text" name="pokemon" placeholder="Nombre o numero"></label>
+            <input type="button" name="buscar" class="btn btn-warning" id="buscar" value="Buscar">
+            <input type="button" name="random" class="btn btn-secondary" value="Pokemon Random">
+            <input type="button" name="pkm-siguiente" class="btn btn-success" value="Pokemon siguiente">
+            <input type="button" name="pkm-anterior" class="btn btn-danger" value="Pokemon anterior">
+            <input type="button" name="imagen" class="btn btn-dark" value="Rotar izq">
+            <input type="button" name="imagen" class="btn btn-dark" value="Rotar der">
+        </div>
+        <h1 id="pokedex-title">Pokedex</h1>
+        <section id="pokemon-list"> </section>
+    </section>
+    <main>
+
+        <!-- Bootstrap alternative -->
+        <div class="container">
+            <div id="poke-container" class="row gy-1 gx-1"></div>
+        </div>
     </main>
     <script src="script.js"></script>
 
